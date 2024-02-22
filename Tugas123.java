@@ -3,20 +3,20 @@ import java.util.Scanner;
 public class Tugas123 {
 
     private static final char[] KODE = {
-        'A', 'B', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M' 
+        'A', 'B', 'D', 'E', 'F', 'G', 'H', 'L', 'N', 'T' 
     };
 
     private static final String[][] KOTA = {
-        {"Aceh","Banda Aceh"},
-        {"Bangka Belitung","Pangkalpinang"},
-        {"Bengkulu","Bengkulu"},
-        {"DI Yogyakarta","Yogyakarta"},
-        {"DKI Jakarta","Jakarta"},
-        {"Jawa Barat","Bandung"},
-        {"Jawa Tengah","Semarang"},
-        {"Jawa Timur","Surabaya"},
-        {"Lampung","Bandar Lampung"},
-        {"Maluku","Ambon"}
+        {"BANTEN"},
+        {"JAKARTA"},
+        {"BANDUNG"},
+        {"CIREBON"},
+        {"BOGOR"},
+        {"PEKALONGAN"},
+        {"SEMARANG"},
+        {"SURABAYA"},
+        {"MALANG"},
+        {"TEGAL"}
     };
 
     public static void main(String[] args) {
@@ -25,18 +25,19 @@ public class Tugas123 {
         System.out.print("Masukkan Kode Plat Nomer: ");
         String kodePlat = scanner.nextLine().toUpperCase();
 
+        char kodeDepan = kodePlat.charAt(0);
         int indexKota = -1;
         for (int i = 0; i < KODE.length; i++) {
-            if(kodePlat.charAt(0) == KODE[i]) {
+            if (kodeDepan == KODE[i]) {
                 indexKota = i;
                 break;
             }
         }
 
-            if (indexKota != -1) {
-                System.out.println("Kota: " + KOTA[indexKota][1]);
-            } else {
-                System.out.println("Kode Plat Nomer Tidak Ditemukan!!");
-            }
+        if (indexKota != -1) {
+            System.out.println("Kota: " + KOTA[indexKota][0]);
+        } else {
+            System.out.println("Kode Plat Nomer Tidak Ditemukan!!");
         }
-    }    
+    }
+}
